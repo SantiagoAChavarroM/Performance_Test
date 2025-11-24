@@ -13,6 +13,7 @@ inventory = [
 
 sales_history = []
 
+# To request a specific numerical data from the user.
 
 def input_int(val):
     while True:
@@ -29,6 +30,9 @@ def input_float(val):
             return value
         except ValueError:
             print("Entrada no válida. Ingresa un número válido.")
+
+
+# Blocks of functions defined to navigate through the menus and perform the instructions of the activity.
 
 def search_book(title):
     return next((p for p in inventory if p["title"].lower() == title.lower()), None)
@@ -200,6 +204,8 @@ def inventory_performance_report():
                               if p["sold"] + p["stock"] > 0 else 0)
         print(f"{p['title']}: {percentage_sold*100:.1f}% sold")
 
+
+# Menu blocks with conditionals and loops for navigation.
 
 
 def main_menu():
